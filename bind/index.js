@@ -41,3 +41,20 @@ console.log(multiplyByTwo(4));
 
 let multiplyByTen = multiply.bind(this,10)
 console.log(multiplyByTen(4));
+
+
+
+const character = {
+    name: 'Simon',
+    getCharacter() {
+      return this.name;
+    }
+  };
+
+//   before
+//   const giveMeTheCharacterNOW = character.getCharacter;
+// after 
+  const giveMeTheCharacterNOW = character.getCharacter.bind(character);
+   
+  //How Would you fix this?
+  console.log('?', giveMeTheCharacterNOW()); //this should return 'Simon' bud doesn't
