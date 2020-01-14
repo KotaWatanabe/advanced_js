@@ -1,5 +1,5 @@
-// call apply
-
+// 1.call apply
+// borrow method
 const wizard = {
     name:'joe',
     health: 50,
@@ -24,8 +24,20 @@ console.log('1', archer);
 // with apply I can use array for args
 // wizard.heal.apply(archer,[50,30]);
 
-// bind will return the new function
+//2. bind will return the new function
 const healArcher = wizard.heal.bind(archer,50,30);
 healArcher();
 
 console.log('2',archer);
+
+//3. function currying
+
+function multiply(a,b){
+    return a*b;
+}
+
+let multiplyByTwo = multiply.bind(this,2)
+console.log(multiplyByTwo(4));
+
+let multiplyByTen = multiply.bind(this,10)
+console.log(multiplyByTen(4));
