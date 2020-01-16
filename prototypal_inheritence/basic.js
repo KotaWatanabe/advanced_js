@@ -22,3 +22,13 @@ console.log(lizard.fire);
 console.log(lizard.fight());
 
 console.log(dragon.isPrototypeOf(lizard)); //true
+
+// __proto__ is not the best way to inheritence
+
+let human = {
+    mortal: true
+}
+
+let socrates = Object.create(human)
+socrates.age = 45
+console.log(human.isPrototypeOf(socrates)) // ture
