@@ -26,9 +26,9 @@ function heavyDuty(index){
     return bigArray[index];
 }
 
-console.log(heavyDuty(688));
-console.log(heavyDuty(688));
-console.log(heavyDuty(688));
+// console.log(heavyDuty(688));
+// console.log(heavyDuty(688));
+// console.log(heavyDuty(688));
 
 // using closure, it create an array only one time 
 
@@ -41,6 +41,58 @@ function heavyDuty2(index){
 }
 
 const getHeavyDuty = heavyDuty2();
-console.log(getHeavyDuty(688));
-console.log(getHeavyDuty(700));
-console.log(getHeavyDuty(800));
+// console.log(getHeavyDuty(688));
+// console.log(getHeavyDuty(700));
+// console.log(getHeavyDuty(800));
+
+// --------- Encapsulation ------------ //
+
+// const makeNuclearButton = () => {
+//     let timeWithoutDestruction = 0;
+//     const passTime = () => timeWithoutDestruction++;
+//     const totalPeaceTime = () => timeWithoutDestruction;
+//     const launch = () => {
+//         timeWithoutDestruction = -1
+//         return '!!!';
+//     }
+//     setInterval(passTime,1000);
+//     return {
+    // ++++++++ intentionally do not return launch so that no one can use launch
+//         totalPeaceTime:totalPeaceTime
+//     }
+// }
+
+// const ohno = makeNuclearButton();
+// console.log(ohno.totalPeaceTime);
+
+let view;
+function initialize() {
+    let called = 0;
+    return function(){
+        if(called > 0){
+            return;
+        }else {
+            view = '!!!'
+            called ++
+            console.log('view was set')
+        }
+    }
+}
+
+// initialize();
+// initialize();
+// initialize();
+
+const onlyOneInitialize = initialize();
+// onlyOneInitialize();
+// onlyOneInitialize();
+
+const array = [1,2,3,4];
+
+for(var i = 0; i < array.length; i++){
+    (function(closureI){
+        setTimeout(function(){
+            console.log('I am at index ' + array[closureI])
+        },3000)
+    })(i)
+}
