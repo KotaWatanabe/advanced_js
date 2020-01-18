@@ -1,15 +1,16 @@
 const array = [1,2,3]
 
-function mutateArray(arr) {
-    arr.pop()
+function removeLastItem(arr) {
+    const newArray = [...array];
+    newArray.pop()
+    return newArray;
 }
-function mutateArray2(arr) {
-    arr.forEach(item => {
-        arr.push(1)
-    })
+function multiplyBy2(arr) {
+    return arr.map(item => item*2)
 }
 
-mutateArray(array);
-mutateArray2(array);
+removeLastItem(array)
+// mutateArray2(array);
 //side effect
-console.log(array)//[1,2,1,1]
+console.log(array)
+console.log(multiplyBy2(array))
