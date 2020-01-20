@@ -28,8 +28,11 @@ const urls = [
 
 Promise.all(urls.map(url => {
     return fetch(url).then(res => res.json())
-})).then(results => {
+}))
+.then(results => {
     console.log(results[0])
     console.log(results[1])
     console.log(results[2])
-}).catch(() => console.log('error'))
+})
+.catch(() => console.log('error'))
+.finally(() => console.log('extra'));
