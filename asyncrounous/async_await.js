@@ -8,7 +8,7 @@ fetchUser();
 
 
 const urls = [
-    'https://jsonplaceholder.typicode.com/user',
+    'https://jsonplaceholder.typicode.com/users',
     'https://jsonplaceholder.typicode.com/posts',
     'https://jsonplaceholder.typicode.com/albums'
 ]
@@ -25,3 +25,14 @@ const getData = async function() {
     }
 }
 
+const getData2 = async function() {
+    try {
+        const arrayOfPromises = urls.map(url => fetch(url));
+        for await (let res of arrayOfPromises) {
+            const data = await res.json();
+            console.log(data);
+        }
+    } catch(err) {
+        consoel.log('ooops',err)
+    }
+}
