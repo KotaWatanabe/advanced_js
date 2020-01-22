@@ -11,3 +11,14 @@ Promise.resolve('asyncfail')
     .catch(err => {
         console.log('final error',err)
     })
+
+//async await
+(async function() {
+    try {
+        await Promise.resolve('ooopsie #1')
+        await Promise.reject('oopsie #2')
+    } catch (err) {
+        console.log(err)
+    }
+    console.log('is this still good?')
+})()
