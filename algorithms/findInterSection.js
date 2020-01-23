@@ -33,8 +33,8 @@ const findInterSection2 = (strArr) => {
     let i = 0;
     let j = 0;
     while (i < arr1.length && j < arr2.length) {
-        let a = arr1[i] 
-        let b = arr2[j] 
+        let a = arr1[i] | 0;
+        let b = arr2[j] | 0;
         
         if(a === b) {
             commonElement.push(a);
@@ -49,7 +49,7 @@ const findInterSection2 = (strArr) => {
     return commonElement.join(',')
 }
 
-console.log('case:2',findInterSection2(['1,3,9,10,17','1,4,9,10'])) 
+console.log('case:2',findInterSection2(['1,3,9,10,17','1,4,9,10']))  /// 1,9,10
 
 ///3
 
