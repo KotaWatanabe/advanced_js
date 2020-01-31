@@ -31,4 +31,9 @@ function hasSameItem(arr1, arr2) {
     return false;
 }
 
-console.log(hasSameItem(array1,array3));
+function hasSameItem2(arr1,arr2) {
+    return arr1.some(item => arr2.includes(item))
+}
+
+// console.log(hasSameItem(array1,array3));
+console.log(hasSameItem2(array1,array2));
