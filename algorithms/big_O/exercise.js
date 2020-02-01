@@ -14,8 +14,8 @@ function hasSameItem(arr1, arr2) {
     //    }
     // }
     // O(a*b)  this is bad...
+    //O(1) Space Complexity
 
-    // O(a + b)
     let map = {};
     for(let i = 0; i < arr1.length; i++) {
         if(!map[i]) {
@@ -30,7 +30,10 @@ function hasSameItem(arr1, arr2) {
     }
     return false;
 }
+// O(a + b)
+// O(a)space complexity
 
+/// some funcion check if one of the item is true or not
 function hasSameItem2(arr1,arr2) {
     return arr1.some(item => arr2.includes(item))
 }
