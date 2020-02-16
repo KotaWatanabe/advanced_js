@@ -19,8 +19,9 @@
 // It doesn't matter what values are set beyond the returned length.
 
 var removeElement = function(nums, val) {
-    nums.filter(el => el !== val);
-    return nums;
+    while(nums.indexOf(val) !== -1) {
+        nums.splice(nums.indexOf(val), 1)
+    }
 };
 
 console.log(removeElement([3,2,2,3],3))
